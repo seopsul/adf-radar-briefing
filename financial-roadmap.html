@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html class="dark" lang="ko"><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"><meta content="mobile_tab" name="shell-type"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"><link href="https://fonts.googleapis.com" rel="preconnect"><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@500;700&amp;family=Space+Grotesk:wght@600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "error": "#ffb4ab", "on-secondary-container": "#5b3800", "on-error-container": "#ffdad6", "primary": "#c3f5ff", "inverse-surface": "#d4e4fa", "on-primary": "#00363d", "primary-fixed-dim": "#00daf3", "surface-tint": "#00daf3", "surface-container-high": "#1c2b3c", "secondary": "#ffb95f", "outline": "#849396", "on-primary-container": "#00626e", "on-primary-fixed": "#001f24", "background": "#051424", "surface-container-highest": "#273647", "on-secondary-fixed-variant": "#653e00", "surface-dim": "#051424", "tertiary-container": "#5be9ad", "secondary-fixed-dim": "#ffb95f", "inverse-primary": "#006875", "surface": "#051424", "on-tertiary-fixed-variant": "#005236", "on-secondary": "#472a00", "secondary-container": "#ee9800", "on-primary-fixed-variant": "#004f58", "primary-container": "#00e5ff", "on-surface": "#d4e4fa", "surface-container-lowest": "#010f1f", "on-tertiary": "#003824", "outline-variant": "#3b494c", "tertiary": "#a8ffd2", "on-error": "#690005", "error-container": "#93000a", "on-surface-variant": "#bac9cc", "on-secondary-fixed": "#2a1700", "tertiary-fixed-dim": "#4edea3", "on-tertiary-fixed": "#002113", "surface-container-low": "#0d1c2d", "on-background": "#d4e4fa", "tertiary-fixed": "#6ffbbe", "secondary-fixed": "#ffddb8", "on-tertiary-container": "#006645", "surface-container": "#122131", "primary-fixed": "9cf0ff", "inverse-on-surface": "#233143", "surface-bright": "#2c3a4c", "surface-variant": "#273647" }, "borderRadius": { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, "spacing": { "space-xl": "2.5rem", "gutter": "1rem", "space-sm": "0.5rem", "margin-tablet": "2rem", "margin": "1rem", "space-md": "1rem", "gutter-tablet": "1.5rem", "space-xs": "0.25rem", "space-lg": "1.5rem" }, "fontFamily": { "body-md": ["Inter"], "telemetry-sm": ["JetBrains Mono"], "headline-lg": ["Space Grotesk"], "display-lg-mobile": ["Space Grotesk"], "telemetry-md": ["JetBrains Mono"], "body-sm": ["Inter"], "display-lg": ["Space Grotesk"], "telemetry-lg": ["JetBrains Mono"], "label-caps": ["Space Grotesk"], "headline-sm": ["Space Grotesk"], "headline-md": ["Space Grotesk"], "body-lg": ["Inter"], "headline-lg-mobile": ["Space Grotesk"] }, "fontSize": { "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }], "telemetry-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.06em", "fontWeight": "500" }], "headline-lg": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "display-lg-mobile": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700" }], "telemetry-md": ["14px", { "lineHeight": "18px", "letterSpacing": "0.04em", "fontWeight": "500" }], "body-sm": ["12px", { "lineHeight": "16px", "fontWeight": "400" }], "display-lg": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "telemetry-lg": ["20px", { "lineHeight": "24px", "letterSpacing": "0.05em", "fontWeight": "700" }], "label-caps": ["11px", { "lineHeight": "14px", "letterSpacing": "0.1em", "fontWeight": "700" }], "headline-sm": ["16px", { "lineHeight": "24px", "letterSpacing": "0.02em", "fontWeight": "600" }], "headline-md": ["20px", { "lineHeight": "28px", "fontWeight": "600" }], "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }], "headline-lg-mobile": ["24px", { "lineHeight": "32px", "letterSpacing": "0em", "fontWeight": "600" }] } } } };</script><style>@layer base{html,body{width:100vw;margin:0;padding:0;background-color:#051424;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface text-on-surface font-body-md text-body-md flex flex-col min-h-screen"><header class="fixed top-0 inset-x-0 z-50 bg-surface/85 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.3)] pt-safe"><div class="h-20 px-margin flex items-center justify-between gap-space-sm"><div class="flex items-center gap-space-sm min-w-0"><img alt="Apex Defense Radar Logo" class="h-8 w-auto object-contain flex-shrink-0" src="https://lh3.googleusercontent.com/aida/ALJJyrC_MhZW4TRNqUK8bNcjTSPbcNzoiBkzQ_qPaC_YEdTOCDjHuzrw_M_fBlvjzo9BXpWOqSCX9FCgNG7eYpetLImxy9eO4F5WZ9PLashTNKo8ofsBZS7LKe85mpHLXFqaPA-3Wa0FUPrcKt127mrBx4SYZgbhEfyy1JJX7qGItUJxbww6eYT_hLry0bKqixarHMZsFRIF6qtRDBtAW5GXsveRmwFHgN2UClscaetdZL3XEA"><div class="flex flex-col min-w-0"><div class="flex items-center gap-space-xs"><span class="font-headline-sm text-headline-sm uppercase tracking-wider text-primary truncate">ADF RADAR BD // 현장 브리핑</span></div><div class="flex items-center gap-space-xs"><span class="font-label-caps text-label-caps uppercase text-secondary font-bold tracking-widest">DEFENCE INTEL | 2026.11</span><span class="text-outline font-telemetry-sm text-telemetry-sm">/</span><span class="font-headline-sm text-headline-sm text-on-surface truncate">Financial Roadmap</span></div></div></div><div class="flex items-center gap-space-sm flex-shrink-0"><div class="hidden sm:flex items-center gap-1.5 px-2 py-1 rounded bg-surface-container-high"><span class="w-2 h-2 rounded-full bg-tertiary animate-pulse"></span><span class="font-telemetry-sm text-telemetry-sm text-tertiary font-bold tracking-wider">LIVE SYNC</span></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex flex-col relative w-full px-margin pt-20 pb-24 bg-surface min-h-screen"><div class="flex flex-col w-full gap-space-lg">
+<!-- Financial Disclaimer Notification (Aerospace Mission Style) -->
+<div class="flex items-start gap-space-sm p-space-md rounded bg-surface-container-high border-l-4 border-secondary shadow-md">
+<span class="material-symbols-outlined text-secondary text-[22px] flex-shrink-0 mt-0.5" style="font-variation-settings: 'FILL' 1;">warning</span>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-space-xs">
+<span class="font-label-caps text-label-caps uppercase text-secondary font-bold tracking-wider">FINANCIAL MODEL DISCLAIMER</span>
+<span class="text-outline-variant font-telemetry-sm text-telemetry-sm">//</span>
+<span class="font-telemetry-sm text-telemetry-sm text-outline">SEC.09 REF</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5 leading-snug">
+        경고: 본 시뮬레이션은 계산 구조를 설명하는 <span class="text-secondary font-semibold">가상 예시(AUD 백만 단위)</span>이며 확정 견적·매출 예측이 아님. 실제 수주 및 공급권 확정 전 외부 공시 불가.
+      </p>
+</div>
+</div>
+<!-- Interactive Scenario Simulator Card -->
+<div class="flex flex-col rounded-lg bg-surface-container p-space-md shadow-xl relative overflow-hidden">
+<div class="absolute -right-10 -top-10 w-36 h-36 rounded-full bg-primary/5 pointer-events-none blur-2xl"></div>
+<div class="flex items-center justify-between gap-space-xs mb-space-sm">
+<div class="flex items-center gap-space-xs">
+<span class="w-1.5 h-3.5 bg-primary-container rounded-sm"></span>
+<span class="font-label-caps text-label-caps text-primary tracking-widest uppercase">FINANCIAL SIMULATOR</span>
+<span class="text-outline font-telemetry-sm text-telemetry-sm">::</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">사업성 3대 시나리오</span>
+</div>
+<span class="font-telemetry-sm text-telemetry-sm px-2 py-0.5 rounded bg-surface-container-highest text-outline">UNIT: AUD M</span>
+</div>
+<!-- Segmented Scenario Selector -->
+<div class="grid grid-cols-3 p-1 rounded bg-surface-container-lowest gap-1 mb-space-md" id="scenario-selector">
+<button class="scenario-tab flex flex-col items-center justify-center py-2 px-1 rounded transition-all text-on-surface-variant hover:text-on-surface" id="btn-downside" onclick="setScenario('downside')">
+<span class="font-label-caps text-label-caps uppercase">축소·지연</span>
+<span class="font-telemetry-sm text-telemetry-sm opacity-70">10대</span>
+</button>
+<button class="scenario-tab flex flex-col items-center justify-center py-2 px-1 rounded transition-all bg-surface-container-high text-primary-container font-bold shadow-[0_0_12px_rgba(0,229,255,0.25)]" id="btn-base" onclick="setScenario('base')">
+<span class="font-label-caps text-label-caps uppercase flex items-center gap-1">기준 <span class="w-1.5 h-1.5 rounded-full bg-primary-container inline-block"></span></span>
+<span class="font-telemetry-sm text-telemetry-sm opacity-90">20대 (기준)</span>
+</button>
+<button class="scenario-tab flex flex-col items-center justify-center py-2 px-1 rounded transition-all text-on-surface-variant hover:text-on-surface" id="btn-upside" onclick="setScenario('upside')">
+<span class="font-label-caps text-label-caps uppercase">확대 목표</span>
+<span class="font-telemetry-sm text-telemetry-sm opacity-70">40대</span>
+</button>
+</div>
+<!-- Telemetry Readout Grid -->
+<div class="grid grid-cols-2 gap-space-sm mb-space-md">
+<div class="flex flex-col p-space-sm rounded bg-surface-container-high">
+<span class="font-label-caps text-label-caps text-outline uppercase tracking-wider">예상 총매출</span>
+<div class="flex items-baseline gap-1 mt-1">
+<span class="font-telemetry-lg text-telemetry-lg font-bold text-on-surface" id="metric-revenue">6.00</span>
+<span class="font-telemetry-sm text-telemetry-sm text-on-surface-variant">M AUD</span>
+</div>
+<span class="font-body-sm text-body-sm text-outline mt-0.5" id="metric-sub-revenue">20대 × 0.30M</span>
+</div>
+<div class="flex flex-col p-space-sm rounded bg-surface-container-high">
+<span class="font-label-caps text-label-caps text-outline uppercase tracking-wider">단순 영업기여 (OP)</span>
+<div class="flex items-baseline gap-1 mt-1">
+<span class="font-telemetry-lg text-telemetry-lg font-bold text-tertiary" id="metric-profit">+0.80</span>
+<span class="font-telemetry-sm text-telemetry-sm text-tertiary">M AUD</span>
+</div>
+<span class="font-body-sm text-body-sm text-tertiary mt-0.5" id="metric-status">흑자 안정권 (13.3%)</span>
+</div>
+<div class="flex flex-col p-space-sm rounded bg-surface-container-low">
+<span class="font-label-caps text-label-caps text-outline uppercase tracking-wider">대당 단가 / 변동비</span>
+<div class="flex items-baseline gap-1 mt-1">
+<span class="font-telemetry-md text-telemetry-md text-on-surface font-semibold" id="metric-unit-price">0.30</span>
+<span class="text-outline">/</span>
+<span class="font-telemetry-md text-telemetry-md text-secondary font-semibold" id="metric-variable-cost">0.21</span>
+<span class="font-telemetry-sm text-telemetry-sm text-outline">M</span>
+</div>
+<span class="font-body-sm text-body-sm text-outline mt-0.5">단위 공헌이익: <span class="text-on-surface" id="metric-margin">0.09M</span></span>
+</div>
+<div class="flex flex-col p-space-sm rounded bg-surface-container-low">
+<span class="font-label-caps text-label-caps text-outline uppercase tracking-wider">초기 고정비 투입</span>
+<div class="flex items-baseline gap-1 mt-1">
+<span class="font-telemetry-md text-telemetry-md text-on-surface font-semibold" id="metric-fixed-cost">1.00</span>
+<span class="font-telemetry-sm text-telemetry-sm text-outline">M AUD</span>
+</div>
+<span class="font-body-sm text-body-sm text-outline mt-0.5">개발·인증·현지 파트너</span>
+</div>
+</div>
+<!-- Inline Financial Waterfall Chart SVG -->
+<div class="flex flex-col p-space-sm rounded bg-surface-container-lowest gap-2">
+<div class="flex items-center justify-between text-outline">
+<span class="font-label-caps text-label-caps uppercase tracking-wider">수익 구조 워터폴 (AUD M)</span>
+<span class="font-telemetry-sm text-telemetry-sm text-primary" id="chart-legend">기준 시나리오</span>
+</div>
+<svg class="w-full h-20 text-on-surface" id="sim-svg" viewBox="0 0 320 80">
+<!-- Gridlines -->
+<line class="text-outline-variant" stroke="currentColor" stroke-dasharray="2,2" stroke-width="0.5" x1="10" x2="310" y1="65" y2="65"></line>
+<line class="text-outline-variant" stroke="currentColor" stroke-dasharray="2,2" stroke-width="0.5" x1="10" x2="310" y1="40" y2="40"></line>
+<line class="text-outline-variant" stroke="currentColor" stroke-dasharray="2,2" stroke-width="0.5" x1="10" x2="310" y1="15" y2="15"></line>
+<!-- Bars Group (Dynamically Redrawn via JS) -->
+<g id="bars-group">
+<!-- Revenue Bar -->
+<rect class="fill-primary-container" height="50" rx="2" width="55" x="25" y="15"></rect>
+<text class="font-telemetry-sm fill-on-primary-container text-[11px] font-bold" text-anchor="middle" x="52" y="42">6.00M</text>
+<text class="font-label-caps fill-on-surface-variant text-[9px]" text-anchor="middle" x="52" y="75">매출</text>
+<!-- Variable Cost Bar -->
+<rect class="fill-secondary" height="35" rx="2" width="55" x="100" y="30"></rect>
+<text class="font-telemetry-sm fill-on-secondary text-[11px] font-bold" text-anchor="middle" x="127" y="50">-4.20M</text>
+<text class="font-label-caps fill-on-surface-variant text-[9px]" text-anchor="middle" x="127" y="75">변동원가</text>
+<!-- Fixed Cost Bar -->
+<rect class="fill-surface-variant" height="10" rx="2" width="55" x="175" y="55"></rect>
+<text class="font-telemetry-sm fill-on-surface text-[11px] font-bold" text-anchor="middle" x="202" y="50">-1.00M</text>
+<text class="font-label-caps fill-on-surface-variant text-[9px]" text-anchor="middle" x="202" y="75">고정비</text>
+<!-- Net Profit Bar -->
+<rect class="fill-tertiary" height="8" rx="2" width="55" x="250" y="57"></rect>
+<text class="font-telemetry-sm fill-tertiary text-[11px] font-bold" text-anchor="middle" x="277" y="50">+0.80M</text>
+<text class="font-label-caps fill-tertiary text-[9px]" text-anchor="middle" x="277" y="75">영업기여</text>
+</g>
+</svg>
+</div>
+</div>
+<!-- Break-Even Point (BEP) Analysis Card -->
+<div class="flex flex-col rounded-lg bg-surface-container p-space-md shadow-lg gap-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[20px]">balance</span>
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface">기준 손익분기점(BEP) 분석</span>
+</div>
+<span class="px-2 py-0.5 rounded bg-tertiary-container text-on-tertiary-container font-label-caps text-label-caps font-bold">12대 분기점</span>
+</div>
+<!-- BEP Formula Callout Box -->
+<div class="p-space-sm rounded bg-surface-container-high flex flex-col gap-1">
+<div class="flex items-center justify-between font-telemetry-sm text-telemetry-sm text-outline">
+<span>BEP CALCULATION FORMULA</span>
+<span>고정비 ÷ (단가 - 단위변동비)</span>
+</div>
+<div class="flex items-center justify-center py-2 px-space-sm bg-surface-container-lowest rounded font-telemetry-md text-telemetry-md text-primary gap-2">
+<span>1.00M AUD</span>
+<span class="text-outline">÷</span>
+<span>(0.30M - 0.21M)</span>
+<span class="text-outline">=</span>
+<span class="font-bold text-tertiary">11.11대 (최소 12대)</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+        * 12대 이상 납품 완료 시 고정 투자금 회수 및 흑자 전환 달성. 운전자본, 보증충당금, 환율 변동은 별도 고려 필요.
+      </p>
+</div>
+<!-- Sensitivity Matrix Badges -->
+<div class="flex flex-col gap-space-xs mt-1">
+<span class="font-label-caps text-label-caps uppercase text-outline tracking-wider">주요 리스크 변수 민감도 스트레스 테스트</span>
+<div class="grid grid-cols-2 gap-space-xs">
+<div class="p-2 rounded bg-surface-container-low flex flex-col gap-0.5">
+<div class="flex items-center justify-between">
+<span class="font-label-caps text-label-caps text-on-surface-variant">납품 단가 하락</span>
+<span class="font-telemetry-sm text-telemetry-sm text-error font-bold">-10%</span>
+</div>
+<span class="font-body-sm text-body-sm text-outline">BEP 16.7대로 증가 (+5대 요구)</span>
+</div>
+<div class="p-2 rounded bg-surface-container-low flex flex-col gap-0.5">
+<div class="flex items-center justify-between">
+<span class="font-label-caps text-label-caps text-on-surface-variant">단위 제조원가</span>
+<span class="font-telemetry-sm text-telemetry-sm text-error font-bold">+15%</span>
+</div>
+<span class="font-body-sm text-body-sm text-outline">변동비 0.24M 상승 시 마진 축소</span>
+</div>
+<div class="p-2 rounded bg-surface-container-low flex flex-col gap-0.5">
+<div class="flex items-center justify-between">
+<span class="font-label-caps text-label-caps text-on-surface-variant">공급 물량 급감</span>
+<span class="font-telemetry-sm text-telemetry-sm text-error font-bold">-50% (10대)</span>
+</div>
+<span class="font-body-sm text-body-sm text-outline">영업기여 -0.70M AUD 적자 전환</span>
+</div>
+<div class="p-2 rounded bg-surface-container-low flex flex-col gap-0.5">
+<div class="flex items-center justify-between">
+<span class="font-label-caps text-label-caps text-on-surface-variant">인증·승인 지연</span>
+<span class="font-telemetry-sm text-telemetry-sm text-secondary font-bold">+12개월</span>
+</div>
+<span class="font-body-sm text-body-sm text-outline">고정비용 0.30M 추가 잠식 위험</span>
+</div>
+</div>
+</div>
+</div>
+<!-- 24-Month Roadmap Section -->
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[20px]">timeline</span>
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface">24개월 4단계 실행 로드맵</span>
+</div>
+<span class="font-telemetry-sm text-telemetry-sm text-outline">PHASE 1 ~ 4</span>
+</div>
+<!-- Timeline Vertical Track -->
+<div class="flex flex-col gap-space-sm relative">
+<!-- Continuous Background Track Line -->
+<div class="absolute left-4 top-4 bottom-4 w-0.5 bg-surface-container-highest z-0"></div>
+<!-- Phase 1 Card (Active) -->
+<div class="flex items-start gap-space-sm relative z-10">
+<div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center flex-shrink-0 shadow-[0_0_10px_rgba(0,229,255,0.4)]">
+<span class="font-telemetry-sm text-telemetry-sm text-on-primary font-bold">01</span>
+</div>
+<div class="flex flex-col flex-1 p-space-sm rounded bg-surface-container-high border-l-2 border-primary">
+<div class="flex items-center justify-between">
+<span class="font-headline-sm text-headline-sm font-bold text-primary">Phase 1: 고객·조달 실사</span>
+<span class="px-2 py-0.5 rounded bg-primary-container/20 text-primary-container font-label-caps text-label-caps font-bold">0 - 3 MONTHS</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1 leading-snug">
+            LAND 156, Leidos, Hanwha Defense Australia의 미충족 요구 분석 및 '요구사항 매칭표' 완성. 실질 진입 창구 검증.
+          </p>
+<div class="flex items-center gap-2 mt-2 pt-2 border-t border-surface-container-highest">
+<span class="material-symbols-outlined text-primary text-[14px]">task_alt</span>
+<span class="font-telemetry-sm text-telemetry-sm text-outline">산출물: 요구-제품 매칭표, 공급망 맵</span>
+</div>
+</div>
+</div>
+<!-- Phase 2 Card -->
+<div class="flex items-start gap-space-sm relative z-10">
+<div class="w-8 h-8 rounded-full bg-surface-container-highest flex items-center justify-center flex-shrink-0">
+<span class="font-telemetry-sm text-telemetry-sm text-outline font-bold">02</span>
+</div>
+<div class="flex flex-col flex-1 p-space-sm rounded bg-surface-container">
+<div class="flex items-center justify-between">
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface">Phase 2: 기술·상업성 1차 검증</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-highest text-outline font-label-caps text-label-caps">3 - 6 MONTHS</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1 leading-snug">
+            자체 IP 소유권, SWaP 스펙, 방산 수출 허가 가능성 검토. 초기 BOM 작성 및 호주 현지 파트너십 예비 견적 확보.
+          </p>
+<div class="flex items-center gap-2 mt-2 pt-2 border-t border-surface-container-high">
+<span class="material-symbols-outlined text-outline text-[14px]">pending_actions</span>
+<span class="font-telemetry-sm text-telemetry-sm text-outline">게이트 조건: 기술권 및 현지 견적 상한 부합</span>
+</div>
+</div>
+</div>
+<!-- Phase 3 Card -->
+<div class="flex items-start gap-space-sm relative z-10">
+<div class="w-8 h-8 rounded-full bg-surface-container-highest flex items-center justify-center flex-shrink-0">
+<span class="font-telemetry-sm text-telemetry-sm text-outline font-bold">03</span>
+</div>
+<div class="flex flex-col flex-1 p-space-sm rounded bg-surface-container">
+<div class="flex items-center justify-between">
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface">Phase 3: 제한적 시험 &amp; 협의</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-highest text-outline font-label-caps text-label-caps">6 - 18 MONTHS</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1 leading-snug">
+            승인된 허용 환경에서 단품 센서 시험 수행 및 차량 통합 협의. 호주 현지 MRO 정비·교체 서비스 파트너십 체결.
+          </p>
+<div class="flex items-center gap-2 mt-2 pt-2 border-t border-surface-container-high">
+<span class="material-symbols-outlined text-outline text-[14px]">pending_actions</span>
+<span class="font-telemetry-sm text-telemetry-sm text-outline">산출물: 실측 성능성적서, MRO 책임계약안</span>
+</div>
+</div>
+</div>
+<!-- Phase 4 Card -->
+<div class="flex items-start gap-space-sm relative z-10">
+<div class="w-8 h-8 rounded-full bg-surface-container-highest flex items-center justify-center flex-shrink-0">
+<span class="font-telemetry-sm text-telemetry-sm text-outline font-bold">04</span>
+</div>
+<div class="flex flex-col flex-1 p-space-sm rounded bg-surface-container">
+<div class="flex items-center justify-between">
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface">Phase 4: 공급 및 현지 MRO 확대</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-highest text-outline font-label-caps text-label-caps">18+ MONTHS</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1 leading-snug">
+            검증된 확정 주문을 기반으로 모듈 공급 개시 및 위험조정 수익성 확보. 호주 전역 순환 정비 체계 활성화.
+          </p>
+<div class="flex items-center gap-2 mt-2 pt-2 border-t border-surface-container-high">
+<span class="material-symbols-outlined text-outline text-[14px]">flag</span>
+<span class="font-telemetry-sm text-telemetry-sm text-outline">목표: 다년 양산 납품 계약 전환</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- 90-Day KPI Tracker Dashboard -->
+<div class="flex flex-col rounded-lg bg-surface-container p-space-md shadow-lg gap-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-tertiary text-[20px]">speed</span>
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface">90일 핵심 KPI 달성 현황 대시보드</span>
+</div>
+<span class="font-telemetry-sm text-telemetry-sm text-tertiary font-bold">진행도 72%</span>
+</div>
+<!-- Progress Cards -->
+<div class="grid grid-cols-2 gap-space-xs">
+<!-- Metric 1 -->
+<div class="p-2.5 rounded bg-surface-container-high flex flex-col gap-1.5">
+<div class="flex items-center justify-between">
+<span class="font-label-caps text-label-caps text-outline uppercase">고객 요구사항 확인률</span>
+<span class="font-telemetry-sm text-telemetry-sm font-bold text-primary">8 / 10 항목</span>
+</div>
+<div class="w-full bg-surface-container-lowest h-1.5 rounded-full overflow-hidden">
+<div class="bg-primary h-full rounded-full" style="width: 80%"></div>
+</div>
+<span class="font-body-sm text-body-sm text-outline">LAND 156 요건 80% 식별</span>
+</div>
+<!-- Metric 2 -->
+<div class="p-2.5 rounded bg-surface-container-high flex flex-col gap-1.5">
+<div class="flex items-center justify-between">
+<span class="font-label-caps text-label-caps text-outline uppercase">경쟁사 공급망 맵</span>
+<span class="font-telemetry-sm text-telemetry-sm font-bold text-tertiary">완료 100%</span>
+</div>
+<div class="w-full bg-surface-container-lowest h-1.5 rounded-full overflow-hidden">
+<div class="bg-tertiary h-full rounded-full" style="width: 100%"></div>
+</div>
+<span class="font-body-sm text-body-sm text-outline">CEA, Echodyne 등 5사 맵핑</span>
+</div>
+<!-- Metric 3 -->
+<div class="p-2.5 rounded bg-surface-container-high flex flex-col gap-1.5">
+<div class="flex items-center justify-between">
+<span class="font-label-caps text-label-caps text-outline uppercase">기술 적합성 갭 확인</span>
+<span class="font-telemetry-sm text-telemetry-sm font-bold text-secondary">60% 분석</span>
+</div>
+<div class="w-full bg-surface-container-lowest h-1.5 rounded-full overflow-hidden">
+<div class="bg-secondary h-full rounded-full" style="width: 60%"></div>
+</div>
+<span class="font-body-sm text-body-sm text-outline">SWaP &amp; 인터페이스 대조 중</span>
+</div>
+<!-- Metric 4 -->
+<div class="p-2.5 rounded bg-surface-container-high flex flex-col gap-1.5">
+<div class="flex items-center justify-between">
+<span class="font-label-caps text-label-caps text-outline uppercase">현지 MRO 파트너 견적</span>
+<span class="font-telemetry-sm text-telemetry-sm font-bold text-primary">2 / 3 접촉</span>
+</div>
+<div class="w-full bg-surface-container-lowest h-1.5 rounded-full overflow-hidden">
+<div class="bg-primary h-full rounded-full" style="width: 66%"></div>
+</div>
+<span class="font-body-sm text-body-sm text-outline">호주 정비공정 견적서 취합</span>
+</div>
+</div>
+</div>
+<!-- Operational Field Actions (Executive Share & Export) -->
+<div class="flex items-center gap-space-sm pt-space-xs">
+<button class="flex-1 h-12 rounded bg-surface-container-high text-on-surface font-headline-sm text-headline-sm font-bold flex items-center justify-center gap-space-xs active:bg-surface-container-highest transition-all" onclick="triggerShare()">
+<span class="material-symbols-outlined text-[18px]">share</span>
+<span>원터치 실무 공유</span>
+</button>
+<button class="flex-1 h-12 rounded bg-primary text-on-primary font-headline-sm text-headline-sm font-bold flex items-center justify-center gap-space-xs shadow-[0_0_12px_rgba(0,229,255,0.25)] active:opacity-90 transition-all" onclick="triggerExport()">
+<span class="material-symbols-outlined text-[18px]">download</span>
+<span>이사회 보고서 내보내기</span>
+</button>
+</div>
+<!-- Dynamic Notification Feedback Toast (Hidden by default) -->
+<div class="fixed bottom-20 left-4 right-4 p-space-sm rounded bg-surface-bright text-on-surface shadow-2xl flex items-center justify-between gap-space-sm opacity-0 pointer-events-none transition-all duration-300 transform translate-y-2 z-50" id="action-toast">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]" id="toast-icon">verified</span>
+<span class="font-body-md text-body-md font-medium" id="toast-message">이사회 보고서 패키지 생성 완료</span>
+</div>
+<span class="font-telemetry-sm text-telemetry-sm text-outline">INTEL // OK</span>
+</div>
+</div>
+<script>
+  // Dynamic Financial Simulator Scenarios Matrix
+  const scenarios = {
+    downside: {
+      units: '10',
+      revenue: '2.50',
+      subRevenue: '10대 × 0.25M',
+      unitPrice: '0.25',
+      variableCost: '0.22',
+      fixedCost: '1.00',
+      profit: '-0.70',
+      profitClass: 'text-error',
+      status: '적자 손실 구간 (-28%)',
+      statusClass: 'text-error',
+      margin: '0.03M',
+      bars: `
+        <rect x="25" y="44" width="55" height="21" class="fill-primary-container" rx="2" />
+        <text x="52" y="58" text-anchor="middle" class="font-telemetry-sm fill-on-primary-container text-[11px] font-bold">2.50M</text>
+        <text x="52" y="75" text-anchor="middle" class="font-label-caps fill-on-surface-variant text-[9px]">매출</text>
+
+        <rect x="100" y="47" width="55" height="18" class="fill-secondary" rx="2" />
+        <text x="127" y="60" text-anchor="middle" class="font-telemetry-sm fill-on-secondary text-[11px] font-bold">-2.20M</text>
+        <text x="127" y="75" text-anchor="middle" class="font-label-caps fill-on-surface-variant text-[9px]">변동원가</text>
+
+        <rect x="175" y="55" width="55" height="10" class="fill-surface-variant" rx="2" />
+        <text x="202" y="50" text-anchor="middle" class="font-telemetry-sm fill-on-surface text-[11px] font-bold">-1.00M</text>
+        <text x="202" y="75" text-anchor="middle" class="font-label-caps fill-on-surface-variant text-[9px]">고정비</text>
+
+        <rect x="250" y="65" width="55" height="8" class="fill-error" rx="2" />
+        <text x="277" y="60" text-anchor="middle" class="font-telemetry-sm fill-error text-[11px] font-bold">-0.70M</text>
+        <text x="277" y="75" text-anchor="middle" class="font-label-caps fill-error text-[9px]">적자 전환</text>
+      `
+    },
+    base: {
+      units: '20',
+      revenue: '6.00',
+      subRevenue: '20대 × 0.30M',
+      unitPrice: '0.30',
+      variableCost: '0.21',
+      fixedCost: '1.00',
+      profit: '+0.80',
+      profitClass: 'text-tertiary',
+      status: '흑자 안정권 (13.3%)',
+      statusClass: 'text-tertiary',
+      margin: '0.09M',
+      bars: `
+        <rect x="25" y="15" width="55" height="50" class="fill-primary-container" rx="2" />
+        <text x="52" y="42" text-anchor="middle" class="font-telemetry-sm fill-on-primary-container text-[11px] font-bold">6.00M</text>
+        <text x="52" y="75" text-anchor="middle" class="font-label-caps fill-on-surface-variant text-[9px]">매출</text>
+
+        <rect x="100" y="30" width="55" height="35" class="fill-secondary" rx="2" />
+        <text x="127" y="50" text-anchor="middle" class="font-telemetry-sm fill-on-secondary text-[11px] font-bold">-4.20M</text>
+        <text x="127" y="75" text-anchor="middle" class="font-label-caps fill-on-surface-variant text-[9px]">변동원가</text>
+
+        <rect x="175" y="55" width="55" height="10" class="fill-surface-variant" rx="2" />
+        <text x="202" y="50" text-anchor="middle" class="font-telemetry-sm fill-on-surface text-[11px] font-bold">-1.00M</text>
+        <text x="202" y="75" text-anchor="middle" class="font-label-caps fill-on-surface-variant text-[9px]">고정비</text>
+
+        <rect x="250" y="57" width="55" height="8" class="fill-tertiary" rx="2" />
+        <text x="277" y="50" text-anchor="middle" class="font-telemetry-sm fill-tertiary text-[11px] font-bold">+0.80M</text>
+        <text x="277" y="75" text-anchor="middle" class="font-label-caps fill-tertiary text-[9px]">영업기여</text>
+      `
+    },
+    upside: {
+      units: '40',
+      revenue: '12.80',
+      subRevenue: '40대 × 0.32M',
+      unitPrice: '0.32',
+      variableCost: '0.20',
+      fixedCost: '1.30',
+      profit: '+3.50',
+      profitClass: 'text-tertiary',
+      status: '고수익 극대화 (27.3%)',
+      statusClass: 'text-tertiary',
+      margin: '0.12M',
+      bars: `
+        <rect x="25" y="8" width="55" height="57" class="fill-primary-container" rx="2" />
+        <text x="52" y="36" text-anchor="middle" class="font-telemetry-sm fill-on-primary-container text-[11px] font-bold">12.8M</text>
+        <text x="52" y="75" text-anchor="middle" class="font-label-caps fill-on-surface-variant text-[9px]">매출</text>
+
+        <rect x="100" y="24" width="55" height="41" class="fill-secondary" rx="2" />
+        <text x="127" y="46" text-anchor="middle" class="font-telemetry-sm fill-on-secondary text-[11px] font-bold">-8.00M</text>
+        <text x="127" y="75" text-anchor="middle" class="font-label-caps fill-on-surface-variant text-[9px]">변동원가</text>
+
+        <rect x="175" y="52" width="55" height="13" class="fill-surface-variant" rx="2" />
+        <text x="202" y="48" text-anchor="middle" class="font-telemetry-sm fill-on-surface text-[11px] font-bold">-1.30M</text>
+        <text x="202" y="75" text-anchor="middle" class="font-label-caps fill-on-surface-variant text-[9px]">고정비</text>
+
+        <rect x="250" y="40" width="55" height="25" class="fill-tertiary" rx="2" />
+        <text x="277" y="34" text-anchor="middle" class="font-telemetry-sm fill-tertiary text-[11px] font-bold">+3.50M</text>
+        <text x="277" y="75" text-anchor="middle" class="font-label-caps fill-tertiary text-[9px]">영업기여</text>
+      `
+    }
+  };
+
+  function setScenario(type) {
+    const data = scenarios[type];
+    if (!data) return;
+
+    // Reset Tabs
+    document.querySelectorAll('.scenario-tab').forEach(tab => {
+      tab.className = 'scenario-tab flex flex-col items-center justify-center py-2 px-1 rounded transition-all text-on-surface-variant hover:text-on-surface';
+    });
+
+    // Highlight Selected Tab
+    const activeTab = document.getElementById(`btn-${type}`);
+    if (activeTab) {
+      activeTab.className = 'scenario-tab flex flex-col items-center justify-center py-2 px-1 rounded transition-all bg-surface-container-high text-primary-container font-bold shadow-[0_0_12px_rgba(0,229,255,0.25)]';
+    }
+
+    // Update Text Data Elements
+    document.getElementById('metric-revenue').textContent = data.revenue;
+    document.getElementById('metric-sub-revenue').textContent = data.subRevenue;
+    document.getElementById('metric-unit-price').textContent = data.unitPrice;
+    document.getElementById('metric-variable-cost').textContent = data.variableCost;
+    document.getElementById('metric-fixed-cost').textContent = data.fixedCost;
+    document.getElementById('metric-profit').textContent = data.profit;
+    document.getElementById('metric-profit').className = `font-telemetry-lg text-telemetry-lg font-bold ${data.profitClass}`;
+    document.getElementById('metric-status').textContent = data.status;
+    document.getElementById('metric-status').className = `font-body-sm text-body-sm ${data.statusClass} mt-0.5`;
+    document.getElementById('metric-margin').textContent = data.margin;
+
+    // Legend Title
+    const names = { downside: '축소/지연 시나리오', base: '기준 시나리오', upside: '확대 시나리오' };
+    document.getElementById('chart-legend').textContent = names[type];
+
+    // Redraw Waterfall SVG
+    document.getElementById('bars-group').innerHTML = data.bars;
+  }
+
+  function showToast(message, icon) {
+    const toast = document.getElementById('action-toast');
+    const msgEl = document.getElementById('toast-message');
+    const iconEl = document.getElementById('toast-icon');
+    
+    if (toast && msgEl) {
+      msgEl.textContent = message;
+      if (icon && iconEl) iconEl.textContent = icon;
+      toast.classList.remove('opacity-0', 'pointer-events-none', 'translate-y-2');
+      toast.classList.add('opacity-100', 'translate-y-0');
+      
+      setTimeout(() => {
+        toast.classList.add('opacity-0', 'pointer-events-none', 'translate-y-2');
+        toast.classList.remove('opacity-100', 'translate-y-0');
+      }, 2500);
+    }
+  }
+
+  function triggerShare() {
+    showToast('24개월 재무 로드맵 요약본이 클립보드에 복사되었습니다.', 'content_paste');
+  }
+
+  function triggerExport() {
+    showToast('이사회 심의용 종합 브리핑 PDF가 성공적으로 다운로드되었습니다.', 'download_done');
+  }
+</script></main><nav class="fixed bottom-0 inset-x-0 z-50 pb-safe bg-surface/90 backdrop-blur-xl shadow-[0_-2px_12px_rgba(0,0,0,0.4)]" data-active-classes="text-primary-container bg-surface-container-high shadow-[0_0_12px_rgba(0,229,255,0.25)]"><div class="flex justify-around items-center h-16 px-space-xs gap-1"><a class="flex flex-col items-center justify-center gap-0.5 flex-1 h-14 rounded text-on-surface-variant transition-all" data-path="executive-decision" href="index.html"><span class="material-symbols-outlined text-[20px]">verified</span><span class="font-label-caps text-label-caps tracking-tight">실사의사결정</span></a><a class="flex flex-col items-center justify-center gap-0.5 flex-1 h-14 rounded text-on-surface-variant transition-all" data-path="defence-intel" href="defence-intel.html"><span class="material-symbols-outlined text-[20px]">shield</span><span class="font-label-caps text-label-caps tracking-tight">호주국방인텔</span></a><a class="flex flex-col items-center justify-center gap-0.5 flex-1 h-14 rounded text-on-surface-variant transition-all" data-path="radar-platform" href="radar-platform.html"><span class="material-symbols-outlined text-[20px]">radar</span><span class="font-label-caps text-label-caps tracking-tight">레이다/플랫폼</span></a><a aria-current="page" class="flex flex-col items-center justify-center gap-0.5 flex-1 h-14 rounded transition-all text-primary-container bg-surface-container-high shadow-[0_0_12px_rgba(0,229,255,0.25)]" data-path="financial-roadmap" href="financial-roadmap.html"><span class="material-symbols-outlined text-[20px]">insights</span><span class="font-label-caps text-label-caps tracking-tight">사업성/로드맵</span></a><a class="flex flex-col items-center justify-center gap-0.5 flex-1 h-14 rounded text-on-surface-variant transition-all" data-path="demo-3d" href="index.html#demo-3d"><span aria-hidden="true" class="material-symbols-outlined text-[20px]">view_in_ar</span><span class="font-label-caps text-label-caps tracking-tight">3D 시연</span></a></div></nav></body></html>
